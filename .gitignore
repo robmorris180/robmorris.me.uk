@@ -1,0 +1,12 @@
+# Logs
+logs
+*.log
+
+# Build directories
+dist
+
+# Dependency directory
+node_modules
+
+# Mac File System File...utterly useless to anyone but me.
+.DS_Store

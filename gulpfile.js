@@ -10,10 +10,20 @@ var deporder = require('gulp-deporder');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
 
 // styles
 gulp.task('css', function(){
     gulp.src('src/styl/global.styl')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                notify.onError({
+                    title: "Gulp error in " + err.plugin,
+                    message: err.toString()
+                })(err);
+            }
+        }))
         .pipe(sourcemaps.init())
         .pipe(stylus({
             compress: false
@@ -24,6 +34,7 @@ gulp.task('css', function(){
             })
         ]))
         .pipe(sourcemaps.write('.'))
+        .pipe(notify("Stylus was compiled correctly!"))
         .pipe(gulp.dest('./dist'));
 });
 

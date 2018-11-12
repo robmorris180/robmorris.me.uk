@@ -2,7 +2,8 @@
 media_queries = {
     small : "only screen and (min-width: 600px)",
     medium : "only screen and (min-width: 1024px)",
-    large : "only screen and (min-width: 1200px)"
+    large : "only screen and (min-width: 1200px)",
+    xlarge : "only screen and (min-width: 1700px)"
 }
 
 breakpoint(breakpoints)
@@ -12,9 +13,3 @@ breakpoint(breakpoints)
     conditions = join(", ", conditions)
     @media conditions
         {block}
-
-
-// font size to caluclate rem unit
-font-size($fontValue = base-font-size, $baseFontValue = base-font-size, $baseLineValue = base-line-height)
-  font-size   $fontValue px
-  font-size   ($fontValue / $baseFontValue) rem

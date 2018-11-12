@@ -1,9 +1,15 @@
 .main
     display: grid
     grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: 80px 1fr
+    height: 100vh
 
 .main__title
-    grid-column: 2 / 12
-    font-size(80)
     line-height: 1.15
     letter-spacing: -1px
+    grid-column: 2 / span 10
+    grid-row: 2
+    align-self: center
+
+    +breakpoint(xlarge)
+        grid-column: 3 / span 8;

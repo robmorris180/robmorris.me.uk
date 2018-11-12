@@ -1,12 +1,13 @@
 .header
-    display: grid
-    grid-template-columns: repeat(12, 1fr)
-    padding: 4em 0
-    margin-bottom: 7vw
+    grid-column: 2 / span 10;
+    grid-row: 1
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
 .header__logo
-    grid-column: 2
-    color: black
-    font-size(40)
+    color: var(--black)
+    font-size: 32px
     font-weight: 700
     letter-spacing: -1.5px
+    line-height: 1

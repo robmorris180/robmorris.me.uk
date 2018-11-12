@@ -1,0 +1,30 @@
+.particles 
+    position: absolute;
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    z-index: -1
+
+.particle
+    position: absolute
+    border-radius: 50%
+
+random(min, max)
+    return floor(math(0, "random") * max + min)
+
+for i in (1..20)
+    @keyframes particle-animation-{i}
+        100%
+            transform: translate3d((random(1, 90) * 1vw), (random(1, 90) * 1vh), (random(1, 100) * 1px))
+    
+    .particle:nth-child({i})
+        size = (random(1, 5) + 10 px)
+        background-color: var(--black)
+        height: size px
+        width: size px
+        animation: particle-animation- + i 60s infinite
+        opacity: (random(1, 100) / 90)
+        animation-delay: -(i * .2s)
+        transform: translate3d((random(1, 90) * 1vw), (random(1, 90) * 1vh), (random(1, 100) * 1px))

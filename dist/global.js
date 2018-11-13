@@ -1,0 +1,1 @@
+"use strict";function switchTheme(t){var e=t.target.dataset.switch,r=document.documentElement;t.target.dataset.switch="dark"===e?(r.style.setProperty("--black","white"),r.style.setProperty("--white","black"),"light"):(r.style.setProperty("--black","black"),r.style.setProperty("--white","white"),"dark")}document.querySelector(".switcher").addEventListener("click",switchTheme);

@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var plumber = require('gulp-plumber');
+var babel = require('gulp-babel');
 var notify = require('gulp-notify');
 
 // styles
@@ -58,6 +59,9 @@ gulp.task('lint', function() {
 // javascript
 gulp.task('js', function(){
     gulp.src('src/js/**/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(deporder())
         .pipe(concat('global.js'))
         .pipe(uglify())
